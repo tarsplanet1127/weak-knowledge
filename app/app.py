@@ -17,7 +17,7 @@ def hello_world():
         model = load('app/watch-recommender.joblib')
         np_arr = np.array([myage, mygender])
         predictions = model.predict([np_arr])  
-        predictions_to_str = str(predictions)
+        predictions_to_str = str(predictions[0])
         #return predictions_to_str
         return render_template('index.html', href2='The suitable bread for you (age:'+str(myage)+' ,gender:'+str(mygender)+') is:'+predictions_to_str)
 
